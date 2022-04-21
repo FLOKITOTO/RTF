@@ -18,7 +18,21 @@ Notre base de données **rtap** est constitué de deux tables **plane** & **flig
 | --- | --- |
 | reg_number  | int(11) |
 | aircraft_icao | varchar(255) |
+<details><summary>CLICK ME</summary>
+<p>
 
+#### plane
+
+    ```sql
+    CREATE TABLE avion    
+    (
+    reg_number int,
+    aircraft_icao VARCHAR(255) 
+    )
+    ```
+
+</p>
+</details>
 
 
 **flight**
@@ -30,16 +44,22 @@ Notre base de données **rtap** est constitué de deux tables **plane** & **flig
 | airline_icao | varchar(255) |
 | status | varchar(255) |
 
-
-
 <details><summary>CLICK ME</summary>
 <p>
 
-#### We can hide anything, even code!
+#### flight
 
-    ```ruby
-      puts "Hello World"
+    ```sql
+    CREATE TABLE flight
+    (
+        id int,
+        flight_icao VARCHAR(255),
+        airline_icao  VARCHAR(255),
+        status VARCHAR(255)
+    )
     ```
 
 </p>
 </details>
+
+
