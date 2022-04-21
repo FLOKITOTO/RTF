@@ -29,3 +29,17 @@ Notre base de données **rtap** est constitué de deux tables **plane** & **flig
 | flight_icao | varchar(255) |
 | airline_icao | varchar(255) |
 | status | varchar(255) |
+
+
+
+<details><summary>CLICK ME</summary>
+<p>
+
+#### We can hide anything, even code!
+
+    ```ruby
+      puts "Hello World"
+    ```
+
+</p>
+</details>
