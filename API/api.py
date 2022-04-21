@@ -1,3 +1,4 @@
+from msilib.schema import Error
 from flask import Flask, request, jsonify, json, Response
 import pymysql
 import logging as log
@@ -6,37 +7,47 @@ api = Flask(__name__)
 
 
 def connect():
-    db = pymysql.connect(database='rtap', host='rtap.mysql.database.azure.com', user='Flokitoto', password='HgnxrEU7i7ykP4r',ssl_ca="{ca-cert filename}", ssl_disabled=False, autocommit=True)
+    db = pymysql.connect(database='rtap',port=3306, host='rtap.mysql.database.azure.com', user='Flokitoto', password='HgnxrEU7i7ykP4r',ssl_ca="{ca-cert filename}", ssl_disabled=True)
     log.basicConfig(level=log.DEBUG, format='%(asctime)s %(levelname)s:\n%(message)s\n')              
     print("Connexion réussie")
     return db
 
 
-@api.route('/get', methods=['GET'])
+@api.route('/')
+def base():
+    return jsonify({"version":"1.0"})
+
+@api.route('/azure', methods=['GET'])
 def read():
     db = connect()
     log.info('Reading Datas')
-    avion = "SELECT * FROM `avion`;"
+    plane = "SELECT * FROM `plane`;"
     cursor = db.cursor()
-    cursor.execute(avion)
+    cursor.execute(plane)
     output = cursor.fetchall()
     return jsonify(output)
 
 
-@api.route('/post', methods=['POST'])
+@api.route('/azure', methods=['POST'])
 def write():
     db = connect()
-    log.info('Writing Datas')
-    aircraft_icao = request.json['aircraft_icao']
-    reg_number = request.json['reg_number']
-    plane = "INSERT INTO `plane` (reg_number, ) VALUES ('" +aircraft_icao+"','"+reg_number+"');"
     cursor = db.cursor()
-    cursor.execute(plane)
-    return jsonify({"aircraft_icao" : aircraft_icao, "reg_number" : reg_number})
-    
+    req = request.json["response"]
+    cursor.executemany("INSERT INTO `plane` (aircraft_icao, reg_number) VALUES (%s, %s);", req)
+
+    for i in req:
+        try:
+            plane = "INSERT INTO `plane` (aircraft_icao, reg_number) VALUES ('"+i["aircraft_icao"]+"','"+i["reg_number"]+"');"
+            cursor.execute(plane)
+        except Exception as e:
+            print(e)
+
+    return jsonify(req)  
+é
 
 if __name__=='__main__':
-    api.run()
+    api.run(debug=True, port=5000, host='0.0.0.0')
+ 
 
 
 
