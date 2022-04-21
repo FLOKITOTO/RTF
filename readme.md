@@ -1,4 +1,4 @@
-Nous avons travailler avec les technologies suivantes :
+We work with the following technologies:
 
 - Microsoft Azure
 - Python
@@ -7,10 +7,9 @@ Nous avons travailler avec les technologies suivantes :
 - React-Leaflet
 
 
-Ce projet récupère les données du traffic aérien de l'API d'[Airlabs](https://airlabs.co/) et les stock en base de données pour ensuite les afficher sur une couche cartographique web. 
+This project retrieves air traffic data from the [Airlabs API ](https://airlabs.co/) and stores it in a database to display it on a web map layer. 
 
-Notre base de données **rtap** est constitué de deux tables **plane** & **flight**
-
+Our database **rtap** is made of two tables **plane** & **flight**
 
 **plane**
 
