@@ -24,7 +24,7 @@ Notre base de données **rtap** est constitué de deux tables **plane** & **flig
 #### plane
 
     ```sql
-    CREATE TABLE avion    
+    CREATE TABLE plane 
     (
     reg_number int,
     aircraft_icao VARCHAR(255) 
