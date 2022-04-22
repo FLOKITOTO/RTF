@@ -33,7 +33,7 @@ def write():
     db = connect()
     cursor = db.cursor()
     req = request.json["response"]
-    cursor.executemany("INSERT INTO `plane` (aircraft_icao, reg_number) VALUES (%s, %s);", req)
+    #cursor.executemany("INSERT INTO `plane` (aircraft_icao, reg_number) VALUES (%s, %s);", req)
 
     for i in req:
         try:
