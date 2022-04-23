@@ -3,6 +3,7 @@ from flask import Flask, request, jsonify, json, Response
 import pymysql
 import logging as log
 
+
 api = Flask(__name__)
 
 
@@ -33,17 +34,23 @@ def write():
     db = connect()
     cursor = db.cursor()
     req = request.json["response"]
-    cursor.executemany("INSERT INTO `plane` (aircraft_icao, reg_number) VALUES (%s, %s);", req)
-
+    # cursor.executemany("INSERT INTO `plane` (aircraft_icao, reg_number) VALUES (%s, %s);", req)
+    # print(req)
+    key = []
     for i in req:
         try:
-            plane = "INSERT INTO `plane` (aircraft_icao, reg_number) VALUES ('"+i["aircraft_icao"]+"','"+i["reg_number"]+"');"
-            cursor.execute(plane)
+            if (key==[]) :
+                plane = "INSERT INTO `plane` (aircraft_icao, reg_number) VALUES ('{}', '{}')".format(i["aircraft_icao"], i["reg_number"])
+                key.append(i["reg_number"])
+            else:
+                if(i["reg_number"] not in key) : #si la key na pas encore etait utiliser, on peut ecrire la requette, sinon on ne fait rien
+                    plane+= ", ('{}', '{}')".format(i["aircraft_icao"], i["reg_number"])
+                    key.append(i["reg_number"])
         except Exception as e:
-            print(e)
-
-    return jsonify(req)  
-é
+             print("failed")
+    # print(plane)
+    cursor.execute(plane)
+    return jsonify(req)
 
 if __name__=='__main__':
     api.run(debug=True, port=5000, host='0.0.0.0')
