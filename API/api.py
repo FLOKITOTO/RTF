@@ -43,7 +43,7 @@ def write():
                 plane = "INSERT INTO `plane` (aircraft_icao, reg_number) VALUES ('{}', '{}')".format(i["aircraft_icao"], i["reg_number"])
                 key.append(i["reg_number"])
             else:
-                if(i["reg_number"] not in key) : #si la key na pas encore etait utiliser, on peut ecrire la requette, sinon on ne fait rien
+                if(i["reg_number"] not in key) : #si la key na pas encore été utilisée, on peut ecrire la requête, sinon on ne fait rien
                     plane+= ", ('{}', '{}')".format(i["aircraft_icao"], i["reg_number"])
                     key.append(i["reg_number"])
         except Exception as e:
