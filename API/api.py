@@ -18,12 +18,12 @@ def connect():
 def base():
     return jsonify({"version":"1.0"})
 
-@api.route('/azure', methods=['GET'])
+@api.route('/azure/plane', methods=['GET'])
 def read():
     db = connect()
-    log.info('Reading Datas')
-    plane = "SELECT * FROM `plane`;"
     cursor = db.cursor()
+    plane = "SELECT * FROM `plane`;"
+    log.info('Reading Datas')
     cursor.execute(plane)
     output = cursor.fetchall()
     return jsonify(output)
@@ -44,13 +44,17 @@ def write():
                 if(i["reg_number"] not in key) :
                     plane+= ", ('{}', '{}')".format(i["aircraft_icao"], i["reg_number"])
                     key.append(i["reg_number"])
+          
         except Exception as e:
              print("failed")
 
     cursor.execute(plane)
+    
     db.commit()
     cursor.close()
     return jsonify(req)
+
+
 
 if __name__=='__main__':
     api.run(debug=True, port=5000, host='0.0.0.0')
