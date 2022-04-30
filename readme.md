@@ -15,7 +15,7 @@ Our database **rtap** is made of two tables **plane** & **flight**
 
 | name of column | type of value |
 | --- | --- |
-| reg_number  | int(11) |
+| reg_number  | varchar(255 |
 | aircraft_icao | varchar(255) |
 <details><summary>CLICK ME</summary>
 <p>
