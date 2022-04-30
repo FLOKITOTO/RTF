@@ -1,0 +1,34 @@
+[
+  {
+    "link": "adding-one-marker",
+    "text": "adding one marker",
+    "done": "true"
+  },
+  {
+    "link": "many-markers",
+    "text": "many markers",
+    "done": "true"
+  },
+  {
+    "link": "add-move-and-delete-marker",
+    "text": "add move and delete marker",
+    "done": "true"
+  },
+  {
+    "link": "center-map-when-click-marker",
+    "text": "center map when click marker",
+    "done": "true"
+  },
+  {
+    "link": "custom-marker-and-popup",
+    "text": "custom marker and popup",
+    "done": "true"
+  },
+
+  {
+    "link": "fullscreen",
+    "text": "HOME",
+    "info": "<a href='https://github.com/Leaflet/Leaflet.fullscreen' target='_blank'>the example uses the fullscreen plugin</a>",
+    "done": "true"
+  }
+]
