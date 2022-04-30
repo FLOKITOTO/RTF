@@ -34,8 +34,6 @@ def write():
     db = connect()
     cursor = db.cursor()
     req = request.json["response"]
-    # cursor.executemany("INSERT INTO `plane` (aircraft_icao, reg_number) VALUES (%s, %s);", req)
-    # print(req)
     key = []
     for i in req:
         try:
@@ -43,13 +41,14 @@ def write():
                 plane = "INSERT INTO `plane` (aircraft_icao, reg_number) VALUES ('{}', '{}')".format(i["aircraft_icao"], i["reg_number"])
                 key.append(i["reg_number"])
             else:
-                if(i["reg_number"] not in key) : #si la key na pas encore etait utiliser, on peut ecrire la requette, sinon on ne fait rien
+                if(i["reg_number"] not in key) : 
                     plane+= ", ('{}', '{}')".format(i["aircraft_icao"], i["reg_number"])
                     key.append(i["reg_number"])
         except Exception as e:
              print("failed")
-    # print(plane)
     cursor.execute(plane)
+    db.commit()
+    cursor.close()
     return jsonify(req)
 
 if __name__=='__main__':
