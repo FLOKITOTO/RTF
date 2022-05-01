@@ -1,11 +1,11 @@
 We work with the following technologies:
 
-Microsoft Azure
-Python
-Pymysql
-Flask
-React
-React-Leaflet
+- Microsoft Azure
+- Python
+- Pymysql
+- Flask
+- React
+- React-Leaflet
 
 An MVC architecture has been set up.
 
