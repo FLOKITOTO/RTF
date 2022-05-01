@@ -1,10 +1,13 @@
 We work with the following technologies:
 
-- Microsoft Azure
-- Python
-- Flask
-- React
-- React-Leaflet
+Microsoft Azure
+Python
+Pymysql
+Flask
+React
+React-Leaflet
+
+An MVC architecture has been set up.
 
 
 This project retrieves air traffic data from the [Airlabs API ](https://airlabs.co/) and stores it in a database to display it on a web map layer. 
