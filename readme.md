@@ -2,9 +2,12 @@ We work with the following technologies:
 
 - Microsoft Azure
 - Python
+- Pymysql
 - Flask
 - React
 - React-Leaflet
+
+An MVC architecture has been set up.
 
 
 This project retrieves air traffic data from the [Airlabs API ](https://airlabs.co/) and stores it in a database to display it on a web map layer. 
@@ -15,7 +18,7 @@ Our database **rtap** is made of two tables **plane** & **flight**
 
 | name of column | type of value |
 | --- | --- |
-| reg_number  | varchar(255 |
+| reg_number  | varchar(255) |
 | aircraft_icao | varchar(255) |
 <details><summary>CLICK ME</summary>
 <p>
