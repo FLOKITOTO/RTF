@@ -6,4 +6,4 @@ plane_bp = Blueprint('plane_bp', __name__)
 
 
 plane_bp.route('/create', methods=['POST'])(store)
-plane_bp.route('/<string:plane_id>', methods=['GET'])(show)
+plane_bp.route('/<string:plane>', methods=['GET'])(show)
