@@ -56,7 +56,7 @@ Our database **rtap** is made of two tables **plane** & **flight**
     CREATE TABLE flight
     (
         id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-        id_plane FOREIGN KEY REFERENCES plane(id)
+        id_plane FOREIGN KEY REFERENCES plane(id),
         flight_icao VARCHAR(255),
         airline_icao  VARCHAR(255),
         status VARCHAR(255)
