@@ -21,7 +21,7 @@ Our database **rtap** is made of two tables **plane** & **flight**
 | id  | int(11) |
 | reg_number  | varchar(255) |
 | aircraft_icao | varchar(255) |
-<details><summary>CLICK ME</summary>
+<details><summary>CLICK ME SQL</summary>
 <p>
 
 #### plane
@@ -49,7 +49,7 @@ Our database **rtap** is made of two tables **plane** & **flight**
 | airline_icao | varchar(255) |
 | status | varchar(255) |
 
-<details><summary>CLICK ME</summary>
+<details><summary>CLICK ME SQL</summary>
 <p>
 
 #### flight
