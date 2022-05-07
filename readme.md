@@ -42,7 +42,7 @@ Our database **rtap** is made of two tables **plane** & **flight**
 
 | name of column | type of value |
 | --- | --- |
-| id  | int(11) | Primarykey
+| id  | int(11) |
 | flight_icao | varchar(255) |
 | airline_icao | varchar(255) |
 | status | varchar(255) |
@@ -55,7 +55,8 @@ Our database **rtap** is made of two tables **plane** & **flight**
     ```sql
     CREATE TABLE flight
     (
-        id int,
+        id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
+        id_plane FOREIGN KEY REFERENCES plane(id)
         flight_icao VARCHAR(255),
         airline_icao  VARCHAR(255),
         status VARCHAR(255)
