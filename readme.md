@@ -18,6 +18,7 @@ Our database **rtap** is made of two tables **plane** & **flight**
 
 | name of column | type of value |
 | --- | --- |
+| id  | int(11) |
 | reg_number  | varchar(255) |
 | aircraft_icao | varchar(255) |
 <details><summary>CLICK ME</summary>
@@ -28,7 +29,7 @@ Our database **rtap** is made of two tables **plane** & **flight**
     ```sql
     CREATE TABLE plane 
     (
-    
+     id int(100) PRIMARY KEY NOT NULL AUTO_INCREMENT,
     reg_number int,
     aircraft_icao VARCHAR(255) 
     )
