@@ -30,7 +30,7 @@ Our database **rtap** is made of two tables **plane** & **flight**
     CREATE TABLE plane 
     (
      id int(100) PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    reg_number int,
+    reg_number VARCHAR(255),
     aircraft_icao VARCHAR(255) 
     )
     ```
