@@ -14,8 +14,12 @@ This project retrieves air traffic data from the [Airlabs API ](https://airlabs.
 
 
 In postman : 
-http://localhost:5000/plane/list
-http://localhost:5000/plane/create
+http://localhost:5000/plane/update
+
+USAGE  :
+
+You need to execute [app.py](https://github.com/FLOKITOTO/RTF/blob/master/MVC/src/app.py) and [scrapper.py](https://github.com/FLOKITOTO/RTF/blob/master/MVC/src/scrapper.py)
+
 Our database **rtap** is made of two tables **plane** & **flight**
 
 **plane**
