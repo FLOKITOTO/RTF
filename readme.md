@@ -16,7 +16,7 @@ This project retrieves air traffic data from the [Airlabs API ](https://airlabs.
 In postman : 
 http://localhost:5000/plane/update
 
-USAGE  :
+```USAGE  :```
 
 You need to execute [app.py](https://github.com/FLOKITOTO/RTF/blob/master/MVC/src/app.py) and [scrapper.py](https://github.com/FLOKITOTO/RTF/blob/master/MVC/src/scrapper.py)
 
