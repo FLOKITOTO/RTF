@@ -8,7 +8,7 @@ class Plane(db.Model):
    
     reg_number = db.Column(db.String(120))
     aircraft_icao = db.Column(db.String(120))
-    id = db.Column(db.Int, primary_key=True) #CHECK opé ici
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 
     @property
     def serialize(self):
