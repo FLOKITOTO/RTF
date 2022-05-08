@@ -12,6 +12,10 @@ An MVC architecture has been set up.
 
 This project retrieves air traffic data from the [Airlabs API ](https://airlabs.co/) and stores it in a database to display it on a web map layer. 
 
+
+In postman : 
+http://localhost:5000/plane/list
+http://localhost:5000/plane/create
 Our database **rtap** is made of two tables **plane** & **flight**
 
 **plane**
