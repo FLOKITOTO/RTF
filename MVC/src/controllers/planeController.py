@@ -16,7 +16,7 @@ def store():
     req = request.json["response"]
     for i in req:
         try:
-            plane = "INSERT INTO `plane` (aircraft_icao, reg_number, long, lat) VALUES ('{}', '{}', '{}', '{}')".format(i["aircraft_icao"], i["reg_number"],i["long"],i["lat"])
+            plane = "INSERT INTO `plane` (aircraft_icao, reg_number, lng, lat) VALUES ('{}', '{}', '{}', '{}')".format(i["aircraft_icao"], i["reg_number"],i["lng"],i["lat"])
         except Exception as e:
              print("failed")
 
