@@ -3,18 +3,20 @@ from flask_migrate import Migrate
 
 from models.plane import db
 from routes.plane_bp import plane_bp
-from routes.flight_bp import flight_bp
+# from routes.flight_bp import flight_bp
+from config import Conf
 
 app = Flask(__name__)
 
-app.config.from_object('config')
+
+app.config.from_object(Conf)
 
 db.init_app(app)
 
 migrate = Migrate(app, db)
 
 app.register_blueprint(plane_bp, url_prefix='/plane')
-app.register_blueprint(flight_bp, url_prefix='/flight')
+# app.register_blueprint(flight_bp, url_prefix='/flight')
 
 @app.route('/')
 
