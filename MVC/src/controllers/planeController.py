@@ -1,10 +1,6 @@
 from flask import jsonify, request
 
 from flask_sqlalchemy import SQLAlchemy
-
-# from models.plane import Plane
-# from models.flight import Flight
-
 from utils.connect import Database
 import logging as log
 
