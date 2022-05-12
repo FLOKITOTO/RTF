@@ -20,7 +20,7 @@ http://localhost:5000/plane/update
 
 You need to execute [app.py](https://github.com/FLOKITOTO/RTF/blob/master/MVC/src/app.py) and [scrapper.py](https://github.com/FLOKITOTO/RTF/blob/master/MVC/src/scrapper.py)
 
-In React app frontend run with npm start in another instance
+In React app frontend run with ```npm start``` in another instance
 
 Our database **rtap** is made of two tables **plane** & **flight**
 
