@@ -19,6 +19,7 @@ http://localhost:5000/plane/update
 ```USAGE  :```
 
 You need to execute [app.py](https://github.com/FLOKITOTO/RTF/blob/master/MVC/src/app.py) and [scrapper.py](https://github.com/FLOKITOTO/RTF/blob/master/MVC/src/scrapper.py)
+In frontend run with npm start in another instance
 
 Our database **rtap** is made of two tables **plane** & **flight**
 
