@@ -7,7 +7,7 @@ import {
   HashRouter as Router,
 } from "react-router-dom";
 import "./App.css";
-
+import Home from './pages/home'
 import Header from "./components/Header";
 import Menu from "./components/Menu";
 import ButtonMenu from "./components/ButtonMenu";
@@ -56,7 +56,7 @@ function App() {
           <Suspense fallback={<div>Page is Loading...</div>}>
             <Switch>
               <Route exact path="/">
-                <Redirect to="/home" />
+                <Home />
               </Route>
               <Route
                 path="/:id"

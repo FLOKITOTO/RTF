@@ -2,9 +2,9 @@ import { MapContainer, TileLayer, Marker, Popup, ScaleControl } from 'react-leaf
 import tileLayer from '../util/tileLayer';
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js';
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
-// import { useEffect } from 'react';
+import { useEffect } from 'react';
 
-// import axios from 'axios'
+import axios from 'axios'
 
 const center = [46.227638, 2.213749];
 
@@ -22,16 +22,17 @@ const center = [46.227638, 2.213749];
 
 
 const MapWrapper = () => {
-  // useEffect(() => {
-  //   componentDataMarkers()
-  // }, [])
-  // const componentDataMarkers = () => {
-  //   axios.get(`http://localhost:5000/plane/latlong`)
-  //     .then(res => {
-  //       console.log(res)
-  //       const markers = res.data;
+  useEffect(() => {
+    console.log('wesj')
+    componentDataMarkers()
+  }, [])
+  const componentDataMarkers = () => {
+    axios.get(`http://localhost:5000/plane/latlong`)
+      .then(res => {
+        console.log("WESH",res)
+        const markers = res.data;
   
-  //     })
+      })}
   return (
     <MapContainer
     fullscreenControl={true}
