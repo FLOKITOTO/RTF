@@ -1,6 +1,5 @@
 import { lazy, useState, useCallback, useEffect, Suspense } from "react";
 import {
-  Redirect,
   Route,
   useLocation,
   Switch,
@@ -58,10 +57,10 @@ function App() {
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route
+              {/* <Route
                 path="/:id"
                 children={<Child id={id} info={info} text={text} />}
-              />
+              /> */}
             </Switch>
           </Suspense>
         </main>

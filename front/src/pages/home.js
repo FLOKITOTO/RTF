@@ -1,38 +1,39 @@
-import { MapContainer, TileLayer, Marker, Popup, ScaleControl } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, ScaleControl } from 'react-leaflet';
 import tileLayer from '../util/tileLayer';
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js';
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
 import { useEffect } from 'react';
 
 import axios from 'axios'
+// import res from 'express/lib/response';
 
 const center = [46.227638, 2.213749];
 
 
-// const MyMarkers = ({ data }) => {
-//   return data.map(({ lat, lng, title }, index) => (
-//     <Marker
-//       key={index}
-//       position={{ lat, lng }}
-//     >
-//       <Popup>{title}</Popup>
-//     </Marker>
-//   ));
-// }
+const MyMarkers = ({ data }) => {
+  return data.map(({ lat, lng }, index) => (
+    <Marker
+      key={index}
+      position={{ lat, lng }}
+      // icon={pointerIcon}
+    >
+    </Marker>
+  ));
+}
 
 
 const MapWrapper = () => {
-  useEffect(() => {
-    console.log('wesj')
-    componentDataMarkers()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect( async () => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    markers = (await componentDataMarkers()).data
+    console.log(markers);
   }, [])
-  const componentDataMarkers = () => {
-    axios.get(`http://localhost:5000/plane/latlong`)
-      .then(res => {
-        console.log("WESH",res)
-        const markers = res.data;
-  
-      })}
+  const componentDataMarkers = async () => await axios.get(`http://localhost:5000/plane/latlong`)
+  var markers = []
+
+
+
   return (
     <MapContainer
     fullscreenControl={true}
@@ -43,7 +44,7 @@ const MapWrapper = () => {
 
       <TileLayer {...tileLayer} />
 
-      {/* <MyMarkers data={points} /> */}
+      <MyMarkers data={markers} />
       <ScaleControl imperial={false} />
     </MapContainer>
   )
