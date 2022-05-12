@@ -1,30 +1,13 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import { MapContainer, TileLayer, Marker, Popup, ScaleControl } from 'react-leaflet';
 import tileLayer from '../util/tileLayer';
+import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js';
+import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
+import { useEffect } from 'react';
+
+import axios from 'axios'
 
 const center = [52.22977, 21.01178];
 
-const points = [
-  {
-    lat: 52.230020586193795,
-    lng: 21.01083755493164,
-    title: 'point 1'
-  },
-  {
-    lat: 52.22924516170657,
-    lng: 21.011320352554325,
-    title: 'point 2'
-  },
-  {
-    lat: 52.229511304688444,
-    lng: 21.01270973682404,
-    title: 'point 3'
-  },
-  {
-    lat: 52.23040500771883,
-    lng: 21.012146472930908,
-    title: 'point 4'
-  },
-];
 
 const MyMarkers = ({ data }) => {
   return data.map(({ lat, lng, title }, index) => (
@@ -37,14 +20,30 @@ const MyMarkers = ({ data }) => {
   ));
 }
 
+
 const MapWrapper = () => {
+  // useEffect(() => {
+  //   componentDataMarkers()
+  // }, [])
+  // const componentDataMarkers = () => {
+  //   axios.get(`http://localhost:5000/plane/latlong`)
+  //     .then(res => {
+  //       console.log(res)
+  //       const markers = res.data;
+  
+  //     })
   return (
-    <MapContainer center={center} zoom={18} scrollWheelZoom={false}>
+    <MapContainer
+    fullscreenControl={true}
+    center={center}
+    zoom={13}
+    scrollWheelZoom={true}
+    >
 
       <TileLayer {...tileLayer} />
 
-      <MyMarkers data={points} />
-
+      {/* <MyMarkers data={points} /> */}
+      <ScaleControl imperial={false} />
     </MapContainer>
   )
 }
