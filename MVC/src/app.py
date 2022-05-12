@@ -1,11 +1,12 @@
 from flask import Flask, render_template
 from flask_migrate import Migrate
-
+from flask_cors import CORS
 from models.plane import db
 from routes.plane_bp import plane_bp
 from config import Conf
 
 app = Flask(__name__)
+CORS(app)
 
 
 app.config.from_object(Conf)
