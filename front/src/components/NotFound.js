@@ -7,7 +7,7 @@ const NotFound = () => {
     <div>
       <h1>404 - Not Found!</h1>
       <div className="flex">
-        <Link to="/simple-map">go home</Link>
+        <Link to="/home">go home</Link>
       </div>
     </div>
   );
