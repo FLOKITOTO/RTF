@@ -6,7 +6,7 @@ import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
 
 // import axios from 'axios'
 
-const center = [52.22977, 21.01178];
+const center = [46.227638, 2.213749];
 
 
 // const MyMarkers = ({ data }) => {
