@@ -2,23 +2,23 @@ import { MapContainer, TileLayer, Marker, Popup, ScaleControl } from 'react-leaf
 import tileLayer from '../util/tileLayer';
 import 'leaflet-fullscreen/dist/Leaflet.fullscreen.js';
 import 'leaflet-fullscreen/dist/leaflet.fullscreen.css';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
-import axios from 'axios'
+// import axios from 'axios'
 
 const center = [52.22977, 21.01178];
 
 
-const MyMarkers = ({ data }) => {
-  return data.map(({ lat, lng, title }, index) => (
-    <Marker
-      key={index}
-      position={{ lat, lng }}
-    >
-      <Popup>{title}</Popup>
-    </Marker>
-  ));
-}
+// const MyMarkers = ({ data }) => {
+//   return data.map(({ lat, lng, title }, index) => (
+//     <Marker
+//       key={index}
+//       position={{ lat, lng }}
+//     >
+//       <Popup>{title}</Popup>
+//     </Marker>
+//   ));
+// }
 
 
 const MapWrapper = () => {
