@@ -35,6 +35,17 @@ def show():
     print(plane)
     return jsonify(output)
 
+
+def latlong():
+    db = Database.connect()
+    cursor = db.cursor()
+    flight = "SELECT lat, lng FROM `flight`;"
+    log.info('Reading Datas')
+    cursor.execute(flight)
+    output = cursor.fetchall()
+    print(flight)
+    return jsonify(output)
+
 def update():
     db = Database.connect()
     cursor = db.cursor()
