@@ -1,5 +1,5 @@
 {
-  "name": "react-leaflet-examples",
+  "name": "home",
   "version": "0.1.5",
   "private": true,
   "dependencies": {
@@ -42,5 +42,5 @@
     "not dead",
     "not op_mini all"
   ],
-  "homepage": "https://tomik23.github.io/react-leaflet-examples"
+  "homepage": ""
 }

@@ -1,5 +1,6 @@
 import { lazy, useState, useCallback, useEffect, Suspense } from "react";
 import {
+  Redirect,
   Route,
   useLocation,
   Switch,
@@ -52,15 +53,16 @@ function App() {
         <Menu parentCallback={callback} />
         <Header />
         <main id="section-example">
-          <Suspense fallback={<div>Page is Loading...</div>}>
+        <Suspense fallback={<div>Page is Loading...</div>}>
             <Switch>
               <Route exact path="/">
                 <Home />
+                <Redirect to="/home"/>
               </Route>
-              {/* <Route
+              <Route
                 path="/:id"
                 children={<Child id={id} info={info} text={text} />}
-              /> */}
+              />
             </Switch>
           </Suspense>
         </main>
