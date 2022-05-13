@@ -11,7 +11,12 @@ class ScraperSQL:
         response = requests.put(self.urlConnectStr, json = json.loads(self.req.content))
         print(response)
 
-execute = ScraperSQL()
-execute.response_s()
+    
+
+while True:
+    execute = ScraperSQL()
+    execute.response_s()
+    time.sleep(6)
+    print("20 seconds okay that refresh")
 
         
