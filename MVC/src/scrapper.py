@@ -16,7 +16,7 @@ class ScraperSQL:
 while True:
     execute = ScraperSQL()
     execute.response_s()
-    time.sleep(6)
+    time.sleep(20)
     print("20 seconds okay that refresh")
 
         
